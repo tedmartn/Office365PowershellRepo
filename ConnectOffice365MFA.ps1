@@ -1,4 +1,4 @@
-﻿function Connect-Office365
+function Connect-Office365
 {
 	[OutputType()]
 	[CmdletBinding(DefaultParameterSetName)]
@@ -387,28 +387,4 @@
 	}
 }
 
-Connect-Office365 -Service Exchange,MSOnline -MFA
-
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Unresctricted
-## Input your Office 365 Admin Credentials
-$UserCredential = Get-Credential
-## This creates the session and authenticates the session with your Office 365 Credentials 
-$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential -Authentication Basic -AllowRedirection
-## This connects you to Office 365 Exchange utilizing the Session Above
-Import-PSSession $Session -DisableNameChecking
-## Filters all Email based on specific domain
-get-mailbox -Filter {EmailAddresses -like "*n.com*" -or EmailAddresses -like "*premier*"} | Get-MailboxPermission -Identity $userMailbox
-## Grants Full Access to mailbox but turns off Auto Mapping so doesn't appear in Outlook for the User
-Add-MailboxPermission -Identity natek@buildtosuitinc.com -User administrator@buildtosuitinc.onmicrosoft.com -AccessRights FullAccess
-Remove-MailboxPermission -Identity test@test.com -User fullaccessuser@test.com   
-
-#Allows Access to Mail Private Items, yes.... It's the Calendar Object...
-Add-MailboxFolderPermission -Identity printapproval@lamcoinc.com:\Calendar -User bbrockhage@lamcoinc.com -AccessRights Editor -SharingPermissionFlags Delegate,CanViewPrivateItems
-Remove-MailboxPermission -Identity benl@buildtosuitinc.com -User administrator@buildtosuitinc.onmicrosoft.com -AccessRights FullAccess
-
-## URL for Offline Access for Mailbox
-https://outlook.office.com/owa/natek@buildtosuitinc.com/?offline=disabled 
-
-
-
-Add-MailboxPermission -Identity linwoodairdata@linwoodmining.com -User rkdadmin@mcbcorp.onmicrosoft.com -AccessRights FullAccess
+Connect-Office365 -Service MSOnline,Exchange -MFA

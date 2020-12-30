@@ -1,0 +1,1 @@
+Get-WindowsFeature -ComputerName incc-ph-drds2.primary.inconcertcare.com -Name Ink* >> C:\test.txt 
