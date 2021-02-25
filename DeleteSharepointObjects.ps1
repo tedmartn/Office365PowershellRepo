@@ -1,6 +1,6 @@
 #Parameters
 $SiteURL = "https://cyrfinancial1.sharepoint.com/"
-$LibraryName = "Documents"
+$LibraryName = "Documents\Judd P"
   
 #Connect to the Site
 Connect-PnPOnline -URL $SiteURL -UseWebLogin
