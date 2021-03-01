@@ -1,0 +1,1 @@
+mkdir "C:\Test\Logs"
