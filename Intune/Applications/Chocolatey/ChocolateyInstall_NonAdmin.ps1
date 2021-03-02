@@ -1,7 +1,7 @@
 # Set directory for installation - Chocolatey does not lock
 # down the directory if not the default
 Set-ExecutionPolicy Bypass -Scope Process -Force;
-$InstallDir='C:\ProgramData\chocolateytest'
+$InstallDir='C:\ProgramData\chocolatey'
 $env:ChocolateyInstall="$InstallDir"
 
 # If your PowerShell Execution policy is restrictive, you may
