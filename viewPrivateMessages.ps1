@@ -10,4 +10,4 @@ Add-MailboxPermission -Identity coreyh@buildtosuitinc.com -User administrator@bu
 
 
 https://outlook.office.com/owa/jgardner@nashbrothers.com/?offline=disabled
-https://outlook.office.com/owa/user@domain.com/?offline=disabled
+https://outlook.office.com/owa/user@domain.com
