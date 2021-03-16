@@ -7,4 +7,4 @@ $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri ht
 Import-PSSession $Session -DisableNameChecking
 
 
-Get-Mailbox -Identity * | Where-Object {$_.EmailAddresses -like 'smtp:tmartin@rkdixon.com'} 
+Get-Mailbox -Identity * | Where-Object {$_.EmailAddresses -like 'smtp:tmartin@winsorgroup.com'} 
